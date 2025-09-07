@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+    <body>
+        <div class="floating-icon">
+        <i class="fas fa-smile"></i>
+    </div>
+
+    <div class="decor decor-1"></div>
+    <div class="decor decor-2"></div>
+    <div class="decor decor-3"></div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-qrcode"></i>QR Generator</h1>
+            <p class="subtitle">Create beautiful QR codes. Customize the size and background</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="panel input-panel">
+                <h2 class="panel-title"><i class="fas fa-cog"></i> Generator Settings</h2>
+                
+                <div class="form-group">
+                    <label for="website-url">URL</label>
+                    <div class="input-icon">
+                        <i class="fas fa-link"></i>
+                        <input type="url" id="website-url" placeholder="https://your-website.com">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Image Format</label>
+                    <div class="options-grid">
+                        <div class="option-card selected" data-format="png">
+                            <i class="fas fa-image"></i>
+                            <span>PNG</span>
+                        </div>
+                        <div class="option-card" data-format="svg">
+                            <i class="fas fa-vector-square"></i>
+                            <span>SVG</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="size">Image Size</label>
+                    <select id="size">
+                        <option value="150">150px (Small)</option>
+                        <option value="200" selected>200px (Medium)</option>
+                        <option value="300">300px (Large)</option>
+                        <option value="400">400px (X-Large)</option>
+                        <option value="500">500px (XX-Large)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Background Style</label>
+                    <div class="options-grid">
+                        <div class="option-card selected" data-bg="white">
+                            <i class="fas fa-square"></i>
+                            <span>White</span>
+                        </div>
+                        <div class="option-card" data-bg="transparent">
+                            <i class="fas fa-border-none"></i>
+                            <span>Transparent</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="generate-btn" class="btn">
+                    <i class="fas fa-magic"></i> Generate QR Code
+                </button>
+            </div>
+            
+            <div class="panel output-panel">
+                <h2 class="panel-title"><i class="fas fa-qrcode"></i> Your QR Code</h2>
+                
+                <div class="qr-container">
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                        <h3>Your QR Code Will Appear Here</h3>
+                        <p>Enter a URL and click "Generate QR Code"</p>
+                    </div>
+                    <img id="qr-image" class="qr-code" style="display: none;" alt="Generated QR Code">
+                    
+                    <div class="loading-container" id="loading-container">
+                        <div class="loading-content">
+                            <div class="loading-text">
+                                <i class="fas fa-ribbon"></i>
+                                Creating QR code
+                            </div>
+                            <div class="line-loader"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="download-options">
+                    <div class="download-btn" id="download-png">
+                        <i class="fas fa-download"></i> PNG
+                    </div>
+                    <div class="download-btn" id="download-svg">
+                        <i class="fas fa-download"></i> SVG
+                    </div>
+                    <div class="download-btn" id="share-btn">
+                        <i class="fas fa-share-alt"></i> Share
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="powered-by">
+                ©2025 Devina Patel</a>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="notification" id="notification">
+        QR Code generated successfully
+    </div>
+    
+<script src="index.js" charset="utf-8"></script>
+</body>
+</html>
